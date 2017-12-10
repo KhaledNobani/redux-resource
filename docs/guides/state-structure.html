@@ -1,0 +1,1188 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>State Structure · redux-resource</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tracking-requests.html" />
+    
+    
+    <link rel="prev" href="resources.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/motivation.html">
+            
+                <a href="../introduction/motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/core-concepts.html">
+            
+                <a href="../introduction/core-concepts.html">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/similar-projects.html">
+            
+                <a href="../introduction/similar-projects.html">
+            
+                    
+                    Similar Projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/examples.html">
+            
+                <a href="../introduction/examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Guides
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="state-structure.html">
+            
+                <a href="state-structure.html">
+            
+                    
+                    State Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="tracking-requests.html">
+            
+                <a href="tracking-requests.html">
+            
+                    
+                    Tracking Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="crud-actions.html">
+            
+                <a href="crud-actions.html">
+            
+                    
+                    CRUD Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="named-requests.html">
+            
+                <a href="named-requests.html">
+            
+                    
+                    Named Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="request-statuses.html">
+            
+                <a href="request-statuses.html">
+            
+                    
+                    Request Statuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="reading-resources.html">
+            
+                <a href="reading-resources.html">
+            
+                    
+                    Reading Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="updating-resources.html">
+            
+                <a href="updating-resources.html">
+            
+                    
+                    Updating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="creating-resources.html">
+            
+                <a href="creating-resources.html">
+            
+                    
+                    Creating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="deleting-resources.html">
+            
+                <a href="deleting-resources.html">
+            
+                    
+                    Deleting Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="usage-with-react.html">
+            
+                <a href="usage-with-react.html">
+            
+                    
+                    Usage With React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="migration-guides.html">
+            
+                <a href="migration-guides.html">
+            
+                    
+                    Migration Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../recipes/">
+            
+                <a href="../recipes/">
+            
+                    
+                    Recipes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recipes/forms.html">
+            
+                <a href="../recipes/forms.html">
+            
+                    
+                    Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recipes/canceling-requests.html">
+            
+                <a href="../recipes/canceling-requests.html">
+            
+                    
+                    Canceling Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recipes/unauthorized-responses.html">
+            
+                <a href="../recipes/unauthorized-responses.html">
+            
+                    
+                    Unauthorized Responses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recipes/user-feedback.html">
+            
+                <a href="../recipes/user-feedback.html">
+            
+                    
+                    User Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recipes/related-resources.html">
+            
+                <a href="../recipes/related-resources.html">
+            
+                    
+                    Related Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recipes/caching.html">
+            
+                <a href="../recipes/caching.html">
+            
+                    
+                    Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../extras/">
+            
+                <a href="../extras/">
+            
+                    
+                    Ecosystem Extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../extras/redux-resource-action-creators.html">
+            
+                <a href="../extras/redux-resource-action-creators.html">
+            
+                    
+                    Redux Resource Action Creators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../extras/redux-resource-xhr.html">
+            
+                <a href="../extras/redux-resource-xhr.html">
+            
+                    
+                    Redux Resource XHR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../extras/redux-resource-prop-types.html">
+            
+                <a href="../extras/redux-resource-prop-types.html">
+            
+                    
+                    Redux Resource Prop Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../extras/redux-resource-plugins.html">
+            
+                <a href="../extras/redux-resource-plugins.html">
+            
+                    
+                    Redux Resource Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../extras/http-status-codes-plugin.html">
+            
+                <a href="../extras/http-status-codes-plugin.html">
+            
+                    
+                    HTTP Status Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../extras/selection-plugin.html">
+            
+                <a href="../extras/selection-plugin.html">
+            
+                    
+                    Selection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../extras/reset-plugin.html">
+            
+                <a href="../extras/reset-plugin.html">
+            
+                    
+                    Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../extras/included-resources-plugin.html">
+            
+                <a href="../extras/included-resources-plugin.html">
+            
+                    
+                    Included Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/state-tree.html">
+            
+                <a href="../faq/state-tree.html">
+            
+                    
+                    State Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/actions.html">
+            
+                <a href="../faq/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/lists.html">
+            
+                <a href="../faq/lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../api-reference/">
+            
+                <a href="../api-reference/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../api-reference/resource-reducer.html">
+            
+                <a href="../api-reference/resource-reducer.html">
+            
+                    
+                    resourceReducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../api-reference/get-status.html">
+            
+                <a href="../api-reference/get-status.html">
+            
+                    
+                    getStatus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../api-reference/get-resources.html">
+            
+                <a href="../api-reference/get-resources.html">
+            
+                    
+                    getResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../api-reference/upsert-resources.html">
+            
+                <a href="../api-reference/upsert-resources.html">
+            
+                    
+                    upsertResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../api-reference/set-resource-meta.html">
+            
+                <a href="../api-reference/set-resource-meta.html">
+            
+                    
+                    setResourceMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../api-reference/action-types.html">
+            
+                <a href="../api-reference/action-types.html">
+            
+                    
+                    actionTypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../api-reference/request-statuses.html">
+            
+                <a href="../api-reference/request-statuses.html">
+            
+                    
+                    requestStatuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >State Structure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="state-structure">State Structure</h1>
+<p>Before we get into manipulating resource data, let&apos;s first cover how the data
+is represented in your state tree.</p>
+<h3 id="state-slices">State Slices</h3>
+<p>Typical usage of Redux Resource involves using
+<a href="http://redux.js.org/docs/api/combineReducers.html" target="_blank"><code>combineReducers</code></a> to
+separate each type of resource into its own &quot;slice&quot; within your overall state
+tree. Each of these slices will store information about a single type of
+resource, separate from your other types of resources.</p>
+<p>In the rest of this guide, we will be talking about the structure of a single
+state slice. If you&apos;re not using <code>combineReducers</code>, then the slice will instead
+be your entire state tree.</p>
+<h3 id="initial-state">Initial State</h3>
+<p>The initial state slice has the following shape:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  lists<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  
+  requests<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>As you dispatch Action types, Redux Resource will make changes to these
+values in a predictable way. We will cover what goes inside each of these pieces
+in this guide.</p>
+<h3 id="resources">Resources</h3>
+<p>All of your resource data will be available in the state slice&apos;s <code>resources</code>
+property. This is an object of resources of a single type.</p>
+<p>Redux Resource enforces a
+<a href="https://en.wikipedia.org/wiki/Database_normalization" target="_blank">normalized</a> structure to
+your data: each individual resource can be found in exactly one place in the
+state tree.</p>
+<p>For instance, if your server returns the following JSON response body:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+      firstName<span class="token punctuation">:</span> <span class="token string">&apos;Sally&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+      firstName<span class="token punctuation">:</span> <span class="token string">&apos;Jane&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>then your state slice will end up looking like this:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token number">23</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+      firstName<span class="token punctuation">:</span> <span class="token string">&apos;Sally&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">100</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+      firstName<span class="token punctuation">:</span> <span class="token string">&apos;Jane&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Resource metadata here</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  lists<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Resource lists go here</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requests<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Named requests here</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The <code>resources</code> object allows you to quickly look up resources given their ID.
+You may be wondering how ordering from the server is preserved. You use &quot;lists&quot;
+for this, which is a feature that we will cover shortly.</p>
+<p>Keep in mind that Redux Resource doesn&apos;t care about the specific format that
+your server sends the data back in. You just need to make sure that the resources
+you pass into Redux Resource have an <code>id</code> attribute.</p>
+<h3 id="resource-metadata">Resource Metadata</h3>
+<p>Metadata about each of the resources in your state slice&apos;s <code>resources</code> array
+is stored under the <code>meta</code> object of the slice. The <code>meta</code> object is similar to
+the <code>resources</code> object, in that the keys are individual resource IDs.</p>
+<p>Metadata includes information about requests, such as whether the resource is
+being updated, or deleted. You can store additional, application-specific
+metadata here, such as whether or not a resource is &quot;selected&quot; in your UI.</p>
+<p>Redux Resource comes with built-in metadata for each resource, representing
+the status of any CRUD request related to that resource. This built-in metadata
+looks like the following:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>These four keys represent the four CRUD actions. The values of the keys are
+one of the four request statuses &#x2013; <code>&quot;NULL&quot;</code>, <code>&quot;PENDING&quot;</code>, <code>&quot;SUCCEEDED&quot;</code>, or
+<code>&quot;FAILED&quot;</code>, representing the status of any requests to CRUD that resource.</p>
+<p>You&apos;re encouraged to store additional, application-specific metadata for your
+resources, too. For instance, a common feature of applications is to allow a
+user to &quot;select&quot; resources, before performing some action on the selection.
+One thing you could do is store a <code>selected</code> boolean on the metadata, so
+that it would look like:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+  selected<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Let&apos;s look at an example to see how this metadata changes as the user interacts
+with your application. Consider an application where a user can select resources
+from a list, and then take action on their selection (such as updating or
+deleting the selected items). If the user has selected two resources, with
+IDs <code>2</code> and <code>23</code>, then their state slice will look like the following:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// The resources themselves are in here.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token number">2</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      selected<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">23</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      selected<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">100</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      selected<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  lists<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requests<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>If the user then clicks a &quot;Delete&quot; button to initiate the deletion of these
+resources, the slice would then look like this:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// The resources themselves are in here.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token number">2</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      selected<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;PENDING&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">23</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      selected<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;PENDING&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">100</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      selected<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      createStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      readStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      updateStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span><span class="token punctuation">,</span>
+      deleteStatus<span class="token punctuation">:</span> <span class="token string">&apos;NULL&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  lists<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requests<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Any time that you have metadata associated with a single item, you can add it
+to that resource&apos;s <code>meta</code> object to keep track of it.</p>
+<p>Keep in mind that you don&apos;t <em>need</em> to store any additional metadata here. For
+instance, in the above example, if you&apos;d rather have a <code>selectedIds</code> property
+directly on your state slice instead, then you could do that. Just know that
+the option is there to store your own, additional metadata per-resource within
+<code>meta</code>.</p>
+<h3 id="lists">Lists</h3>
+<p>Lists are a way to keep track of <em>ordered subsets</em> of resources. The <code>resources</code>
+section of the slice (described above), is useful in that it provides a single
+location for all resources of a single type to live. It&apos;s also useful because
+it provides quick lookups for all resources, given their ID.</p>
+<p>The <code>resources</code> object does not account for two things that applications
+commonly need:</p>
+<p>The first is keeping track of ordering. JavaScript objects are unordered, so they
+are unable to keep track of, say, the order that a server returns your resources in.</p>
+<p>The second is keeping track of different groups of resources. Imagine an
+application for managing books, where the user has a list of books returned
+by a search result, and also a shopping cart with a list of books.</p>
+<p>Because these are the same resource (books), they belong in the same slice.
+But there are two different &quot;groupings&quot; of them, and they may have a different
+order.</p>
+<p>Lists lets you do both of these things. Lists allow you to keep track of an ordering
+that the server returns to you, and you can have as many lists as you&apos;d like.</p>
+<p>Using the above example, let&apos;s see what those lists might look in the state slice:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// The resources themselves are in here.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  lists<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    shoppingCart<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    searchResults<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">782</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requests<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="requests">Requests</h3>
+<p>The last piece of the slice is called &quot;requests.&quot; Any time that you initiate a
+CRUD operation request, you can assign it a name. A name is just a string,
+such as <code>&quot;createBook&quot;</code>. Redux Resource associates the following data about
+the request with your named request:</p>
+<ol>
+<li>the lifecycle status (pending, failed, and so on) of the request</li>
+<li>which resources were returned by the request</li>
+</ol>
+<p>The primary use case for named requests is to track statuses in your
+application. In the above section on <code>meta</code>, we used the fact that some
+requests target specific resources (by their ID) to track the request
+status on the resource&apos;s metadata.</p>
+<p>We can&apos;t always do that, though. Consider a request that searches for books
+by the title that the user has typed in. There&apos;s no specific ID associated
+with this request, so we can&apos;t store information about the request with a
+resource&apos;s metadata. By giving requests like these a name, we can keep track
+of their lifecycle, too.</p>
+<p>The structure of a slice with named requests looks like the following:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// The resources themselves are in here.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// The resource meta is in here.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  lists<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Lists are in here</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requests<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    createBook<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      ids<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      status<span class="token punctuation">:</span> <span class="token string">&apos;PENDING&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    shoppingCart<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      ids<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      status<span class="token punctuation">:</span> <span class="token string">&apos;SUCCEEDED&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    recentBooks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      ids<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      status<span class="token punctuation">:</span> <span class="token string">&apos;SUCCEEDED&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now that you know how data is stored, you&apos;re ready to start building
+Redux Actions to modify this data.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="resources.html" class="navigation navigation-prev " aria-label="Previous page: Resources">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tracking-requests.html" class="navigation navigation-next " aria-label="Next page: Tracking Requests">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"State Structure","level":"1.3.2","depth":2,"next":{"title":"Tracking Requests","level":"1.3.3","depth":2,"path":"docs/guides/tracking-requests.md","ref":"docs/guides/tracking-requests.md","articles":[]},"previous":{"title":"Resources","level":"1.3.1","depth":2,"path":"docs/guides/resources.md","ref":"docs/guides/resources.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs","github","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/jmeas/redux-resource/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":"auto","token":"UA-102027744-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jmeas/redux-resource/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"redux-resource","gitbook":"3.2.2"},"file":{"path":"docs/guides/state-structure.md","mtime":"2017-12-10T00:20:01.137Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-10T02:11:05.803Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

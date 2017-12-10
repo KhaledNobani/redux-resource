@@ -1,0 +1,962 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Caching · redux-resource</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../extras/" />
+    
+    
+    <link rel="prev" href="related-resources.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/motivation.html">
+            
+                <a href="../introduction/motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/core-concepts.html">
+            
+                <a href="../introduction/core-concepts.html">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/similar-projects.html">
+            
+                <a href="../introduction/similar-projects.html">
+            
+                    
+                    Similar Projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/examples.html">
+            
+                <a href="../introduction/examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../guides/">
+            
+                <a href="../guides/">
+            
+                    
+                    Guides
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../guides/resources.html">
+            
+                <a href="../guides/resources.html">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../guides/state-structure.html">
+            
+                <a href="../guides/state-structure.html">
+            
+                    
+                    State Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../guides/tracking-requests.html">
+            
+                <a href="../guides/tracking-requests.html">
+            
+                    
+                    Tracking Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../guides/crud-actions.html">
+            
+                <a href="../guides/crud-actions.html">
+            
+                    
+                    CRUD Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../guides/named-requests.html">
+            
+                <a href="../guides/named-requests.html">
+            
+                    
+                    Named Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../guides/request-statuses.html">
+            
+                <a href="../guides/request-statuses.html">
+            
+                    
+                    Request Statuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../guides/lists.html">
+            
+                <a href="../guides/lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../guides/reading-resources.html">
+            
+                <a href="../guides/reading-resources.html">
+            
+                    
+                    Reading Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../guides/updating-resources.html">
+            
+                <a href="../guides/updating-resources.html">
+            
+                    
+                    Updating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../guides/creating-resources.html">
+            
+                <a href="../guides/creating-resources.html">
+            
+                    
+                    Creating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../guides/deleting-resources.html">
+            
+                <a href="../guides/deleting-resources.html">
+            
+                    
+                    Deleting Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../guides/usage-with-react.html">
+            
+                <a href="../guides/usage-with-react.html">
+            
+                    
+                    Usage With React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../guides/plugins.html">
+            
+                <a href="../guides/plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../guides/migration-guides.html">
+            
+                <a href="../guides/migration-guides.html">
+            
+                    
+                    Migration Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Recipes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="forms.html">
+            
+                <a href="forms.html">
+            
+                    
+                    Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="canceling-requests.html">
+            
+                <a href="canceling-requests.html">
+            
+                    
+                    Canceling Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="unauthorized-responses.html">
+            
+                <a href="unauthorized-responses.html">
+            
+                    
+                    Unauthorized Responses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="user-feedback.html">
+            
+                <a href="user-feedback.html">
+            
+                    
+                    User Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="related-resources.html">
+            
+                <a href="related-resources.html">
+            
+                    
+                    Related Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="caching.html">
+            
+                <a href="caching.html">
+            
+                    
+                    Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../extras/">
+            
+                <a href="../extras/">
+            
+                    
+                    Ecosystem Extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../extras/redux-resource-action-creators.html">
+            
+                <a href="../extras/redux-resource-action-creators.html">
+            
+                    
+                    Redux Resource Action Creators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../extras/redux-resource-xhr.html">
+            
+                <a href="../extras/redux-resource-xhr.html">
+            
+                    
+                    Redux Resource XHR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../extras/redux-resource-prop-types.html">
+            
+                <a href="../extras/redux-resource-prop-types.html">
+            
+                    
+                    Redux Resource Prop Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../extras/redux-resource-plugins.html">
+            
+                <a href="../extras/redux-resource-plugins.html">
+            
+                    
+                    Redux Resource Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../extras/http-status-codes-plugin.html">
+            
+                <a href="../extras/http-status-codes-plugin.html">
+            
+                    
+                    HTTP Status Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../extras/selection-plugin.html">
+            
+                <a href="../extras/selection-plugin.html">
+            
+                    
+                    Selection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../extras/reset-plugin.html">
+            
+                <a href="../extras/reset-plugin.html">
+            
+                    
+                    Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../extras/included-resources-plugin.html">
+            
+                <a href="../extras/included-resources-plugin.html">
+            
+                    
+                    Included Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/state-tree.html">
+            
+                <a href="../faq/state-tree.html">
+            
+                    
+                    State Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/actions.html">
+            
+                <a href="../faq/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/lists.html">
+            
+                <a href="../faq/lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../api-reference/">
+            
+                <a href="../api-reference/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../api-reference/resource-reducer.html">
+            
+                <a href="../api-reference/resource-reducer.html">
+            
+                    
+                    resourceReducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../api-reference/get-status.html">
+            
+                <a href="../api-reference/get-status.html">
+            
+                    
+                    getStatus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../api-reference/get-resources.html">
+            
+                <a href="../api-reference/get-resources.html">
+            
+                    
+                    getResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../api-reference/upsert-resources.html">
+            
+                <a href="../api-reference/upsert-resources.html">
+            
+                    
+                    upsertResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../api-reference/set-resource-meta.html">
+            
+                <a href="../api-reference/set-resource-meta.html">
+            
+                    
+                    setResourceMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../api-reference/action-types.html">
+            
+                <a href="../api-reference/action-types.html">
+            
+                    
+                    actionTypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../api-reference/request-statuses.html">
+            
+                <a href="../api-reference/request-statuses.html">
+            
+                    
+                    requestStatuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Caching</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="caching">Caching</h1>
+<p>Caching server responses can improve the responsiveness of your application. </p>
+<p>Redux Resource does not currently provide an official plugin for caching. This recipe contains
+tips that could help you if you&apos;re interested in writing your own caching system.</p>
+<blockquote>
+<p>Keep in mind that caching is an optimization, and optimizations
+  frequently require more code and more complexity. If your application&apos;s endpoints are fast
+  enough, you might not see a noticeable improvement by introducing caching.</p>
+</blockquote>
+<h3 id="caching-using-named-requests-or-lists">Caching Using Named Requests or Lists</h3>
+<p>We recommend using either <a href="../guides/lists.html">lists</a> or
+<a href="../guides/named-requests.html">named requests</a> for caching.</p>
+<h3 id="caching-requests-using-names">Caching Requests Using Names</h3>
+<p>A caching system using named requests might work like this:</p>
+<ol>
+<li>Keep a store of cached responses from the server in memory, keyed off by the request name.</li>
+<li>Anytime the UI calls an action creator with a particular request label, the action creator checks
+the cache. If that request exists in the cache, then you return the cached result.</li>
+<li>Introduce new action properties, such as <code>skipCache</code>, to provide programmatic control over skipping
+the cache when a request is made.</li>
+<li>Provide a new action creator that lets developers programmatically wipe the cache.</li>
+</ol>
+<p>This system is untested, but we believe it would work well for many applications.</p>
+<h3 id="caching-requests-using-lists">Caching Requests Using Lists</h3>
+<p>If you have many requests contributing to a single list, then you may need to cache at the
+list level. For instance, if the user can read their favorite books, and then create new
+favorite books. The new &quot;list&quot; of books that needs to be cached includes the results of
+these two requests. A similar to the system above should also work for lists. Just use the
+list name rather than the request name.</p>
+<hr>
+<p>If you create a caching library (even if it&apos;s different from the above suggestion), and you&apos;d
+like for it to be officially supported, let us know by
+<a href="https://github.com/jmeas/redux-resource/issues/new?title=Caching+library" target="_blank">opening an issue</a>.
+We&apos;d be happy to include a caching library to the official repository.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="related-resources.html" class="navigation navigation-prev " aria-label="Previous page: Related Resources">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../extras/" class="navigation navigation-next " aria-label="Next page: Ecosystem Extras">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Caching","level":"1.4.6","depth":2,"next":{"title":"Ecosystem Extras","level":"1.5","depth":1,"path":"docs/extras/README.md","ref":"docs/extras/README.md","articles":[{"title":"Redux Resource Action Creators","level":"1.5.1","depth":2,"path":"docs/extras/redux-resource-action-creators.md","ref":"docs/extras/redux-resource-action-creators.md","articles":[]},{"title":"Redux Resource XHR","level":"1.5.2","depth":2,"path":"docs/extras/redux-resource-xhr.md","ref":"docs/extras/redux-resource-xhr.md","articles":[]},{"title":"Redux Resource Prop Types","level":"1.5.3","depth":2,"path":"docs/extras/redux-resource-prop-types.md","ref":"docs/extras/redux-resource-prop-types.md","articles":[]},{"title":"Redux Resource Plugins","level":"1.5.4","depth":2,"path":"docs/extras/redux-resource-plugins.md","ref":"docs/extras/redux-resource-plugins.md","articles":[{"title":"HTTP Status Codes","level":"1.5.4.1","depth":3,"path":"docs/extras/http-status-codes-plugin.md","ref":"docs/extras/http-status-codes-plugin.md","articles":[]},{"title":"Selection","level":"1.5.4.2","depth":3,"path":"docs/extras/selection-plugin.md","ref":"docs/extras/selection-plugin.md","articles":[]},{"title":"Reset","level":"1.5.4.3","depth":3,"path":"docs/extras/reset-plugin.md","ref":"docs/extras/reset-plugin.md","articles":[]},{"title":"Included Resources","level":"1.5.4.4","depth":3,"path":"docs/extras/included-resources-plugin.md","ref":"docs/extras/included-resources-plugin.md","articles":[]}]}]},"previous":{"title":"Related Resources","level":"1.4.5","depth":2,"path":"docs/recipes/related-resources.md","ref":"docs/recipes/related-resources.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs","github","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/jmeas/redux-resource/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":"auto","token":"UA-102027744-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jmeas/redux-resource/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"redux-resource","gitbook":"3.2.2"},"file":{"path":"docs/recipes/caching.md","mtime":"2017-10-14T00:20:50.180Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-10T02:11:05.803Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

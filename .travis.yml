@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "8"
+sudo: false
+install:
+  # Install the deps in the root project
+  - npm i
+  # Install the nested deps, but the linked repositories won't work at this
+  # stage, because the deps aren't build
+  - npm run bootstrap
+  # Build the deps
+  - npm run build
+notifications:
+  email: false
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < coverage/lcov.info

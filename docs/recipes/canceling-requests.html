@@ -1,0 +1,1105 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Canceling Requests · redux-resource</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="unauthorized-responses.html" />
+    
+    
+    <link rel="prev" href="forms.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/motivation.html">
+            
+                <a href="../introduction/motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/core-concepts.html">
+            
+                <a href="../introduction/core-concepts.html">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/similar-projects.html">
+            
+                <a href="../introduction/similar-projects.html">
+            
+                    
+                    Similar Projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/examples.html">
+            
+                <a href="../introduction/examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../guides/">
+            
+                <a href="../guides/">
+            
+                    
+                    Guides
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../guides/resources.html">
+            
+                <a href="../guides/resources.html">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../guides/state-structure.html">
+            
+                <a href="../guides/state-structure.html">
+            
+                    
+                    State Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../guides/tracking-requests.html">
+            
+                <a href="../guides/tracking-requests.html">
+            
+                    
+                    Tracking Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../guides/crud-actions.html">
+            
+                <a href="../guides/crud-actions.html">
+            
+                    
+                    CRUD Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../guides/named-requests.html">
+            
+                <a href="../guides/named-requests.html">
+            
+                    
+                    Named Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../guides/request-statuses.html">
+            
+                <a href="../guides/request-statuses.html">
+            
+                    
+                    Request Statuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../guides/lists.html">
+            
+                <a href="../guides/lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../guides/reading-resources.html">
+            
+                <a href="../guides/reading-resources.html">
+            
+                    
+                    Reading Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../guides/updating-resources.html">
+            
+                <a href="../guides/updating-resources.html">
+            
+                    
+                    Updating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../guides/creating-resources.html">
+            
+                <a href="../guides/creating-resources.html">
+            
+                    
+                    Creating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../guides/deleting-resources.html">
+            
+                <a href="../guides/deleting-resources.html">
+            
+                    
+                    Deleting Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../guides/usage-with-react.html">
+            
+                <a href="../guides/usage-with-react.html">
+            
+                    
+                    Usage With React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../guides/plugins.html">
+            
+                <a href="../guides/plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../guides/migration-guides.html">
+            
+                <a href="../guides/migration-guides.html">
+            
+                    
+                    Migration Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Recipes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="forms.html">
+            
+                <a href="forms.html">
+            
+                    
+                    Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="canceling-requests.html">
+            
+                <a href="canceling-requests.html">
+            
+                    
+                    Canceling Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="unauthorized-responses.html">
+            
+                <a href="unauthorized-responses.html">
+            
+                    
+                    Unauthorized Responses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="user-feedback.html">
+            
+                <a href="user-feedback.html">
+            
+                    
+                    User Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="related-resources.html">
+            
+                <a href="related-resources.html">
+            
+                    
+                    Related Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="caching.html">
+            
+                <a href="caching.html">
+            
+                    
+                    Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../extras/">
+            
+                <a href="../extras/">
+            
+                    
+                    Ecosystem Extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../extras/redux-resource-action-creators.html">
+            
+                <a href="../extras/redux-resource-action-creators.html">
+            
+                    
+                    Redux Resource Action Creators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../extras/redux-resource-xhr.html">
+            
+                <a href="../extras/redux-resource-xhr.html">
+            
+                    
+                    Redux Resource XHR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../extras/redux-resource-prop-types.html">
+            
+                <a href="../extras/redux-resource-prop-types.html">
+            
+                    
+                    Redux Resource Prop Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../extras/redux-resource-plugins.html">
+            
+                <a href="../extras/redux-resource-plugins.html">
+            
+                    
+                    Redux Resource Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../extras/http-status-codes-plugin.html">
+            
+                <a href="../extras/http-status-codes-plugin.html">
+            
+                    
+                    HTTP Status Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../extras/selection-plugin.html">
+            
+                <a href="../extras/selection-plugin.html">
+            
+                    
+                    Selection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../extras/reset-plugin.html">
+            
+                <a href="../extras/reset-plugin.html">
+            
+                    
+                    Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../extras/included-resources-plugin.html">
+            
+                <a href="../extras/included-resources-plugin.html">
+            
+                    
+                    Included Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/state-tree.html">
+            
+                <a href="../faq/state-tree.html">
+            
+                    
+                    State Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/actions.html">
+            
+                <a href="../faq/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/lists.html">
+            
+                <a href="../faq/lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../api-reference/">
+            
+                <a href="../api-reference/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../api-reference/resource-reducer.html">
+            
+                <a href="../api-reference/resource-reducer.html">
+            
+                    
+                    resourceReducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../api-reference/get-status.html">
+            
+                <a href="../api-reference/get-status.html">
+            
+                    
+                    getStatus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../api-reference/get-resources.html">
+            
+                <a href="../api-reference/get-resources.html">
+            
+                    
+                    getResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../api-reference/upsert-resources.html">
+            
+                <a href="../api-reference/upsert-resources.html">
+            
+                    
+                    upsertResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../api-reference/set-resource-meta.html">
+            
+                <a href="../api-reference/set-resource-meta.html">
+            
+                    
+                    setResourceMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../api-reference/action-types.html">
+            
+                <a href="../api-reference/action-types.html">
+            
+                    
+                    actionTypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../api-reference/request-statuses.html">
+            
+                <a href="../api-reference/request-statuses.html">
+            
+                    
+                    requestStatuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Canceling Requests</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="canceling-requests">Canceling Requests</h1>
+<p>Many applications transfer data using HTTP requests. One feature of HTTP
+requests is that they can be cancelled.</p>
+<p>As a rule of thumb, for each request that you make in your application, there
+will always be one situation where you will want to cancel that request to
+prevent bugs.</p>
+<h3 id="why-do-it">Why do it</h3>
+<p>Canceling requests prevents race conditions. A race condition occurs when you
+have two requests in flight at the same time, but your code is written such that
+one must resolve before the other. As you may know, requests can resolve
+in any order, which leads to the bugs.</p>
+<p>A common pattern we&apos;ve seen in Redux applications is this:</p>
+<ol>
+<li>whenever a request completes, an action is dispatched</li>
+<li>a reducer responds to that action, updating the state</li>
+<li>a view renders using the latest data from the state</li>
+</ol>
+<p>This pattern isn&apos;t bad &#x2013; it&apos;s great! You just need to be aware that
+it can lead to bugs when requests aren&apos;t cancelled.</p>
+<p>Let&apos;s look at two examples that demonstrate the problem.</p>
+<h4 id="example-a-typehead">Example: A Typehead</h4>
+<p>Consider a &quot;typeahead&quot; component that allows a user to type to search for books.
+Even when the user&apos;s input is debounced, there are situations where two (or more)
+active requests can be in flight. The user can type, wait a moment for a request
+to send, then type one key to fire off a second request. If the backend response
+time is slower than the debounce time, then two search requests will be in
+flight at once.</p>
+<p>Because the requests can complete in any order, it is possible that the user&apos;s
+earliest search results will return <em>after</em> their latest search results. If
+your code is written such that the last-received search results are displayed,
+then that can lead to the wrong search results being shown.</p>
+<p>Canceling a previous request resolves this problem, as it means that only one
+search request will ever be in flight at a time, and it will be the user&apos;s most
+recent search. If you&apos;re using an action creator that returns a native
+XMLHttpRequest object, such as the action creator from
+<a href="../extras/redux-resource-xhr.html">Redux Resource XHR</a>, then your code may look
+like this:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Typeahead</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  searchBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>searchBooksRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>searchBooksRequest<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>searchBooksRequest <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">searchBooks</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Another tip is to cancel any requests when the component unmounts. If the search
+results aren&apos;t needed when the component unmounts, then letting a request complete
+will still update your state tree, which can cause unnecessary renders in your
+application. Canceling requests in <code>componentWillUnmount</code> might look something
+like:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Typeahead</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  componentWillUnmount<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>searchBooksRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>searchBooksRequest<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="example-pagination">Example: Pagination</h4>
+<p>Consider a page of an application that displays books. Often, long lists of
+resources will be paginated, and a user can move between the pages by clicking a
+&quot;next&quot; or &quot;previous&quot; button.</p>
+<p>A race condition can occur when the user clicks the buttons too fast, or when
+the backend service is slow. If your view layer renders out the results of the
+latest response, then it&apos;s possible that they could see the results from the
+wrong page.</p>
+<p>Similar to the search example above, ensuring that only a single page of data
+is being fetched at once is the solution.</p>
+<p>The solution is the same as the typeahead example:</p>
+<ol>
+<li>cancel any existing page-change requests before starting a new one</li>
+<li>consider if it makes sense to cancel the request when the component
+unmounts</li>
+</ol>
+<p>A common feature of these bugs is that they depend on unreliable network
+conditions, so they don&apos;t usually come up in a development environment. This
+makes them easy to ignore, but they&apos;re still worth protecting against.</p>
+<h3 id="how-to-do-it">How to do it</h3>
+<p>Typically, applications do not need to inform the user when a request is aborted.
+Accordingly, Redux Resource does not track if a request is in an aborted state. Instead,
+we encourage you to set the request status back to <code>&quot;NULL&quot;</code> when the request is canceled.</p>
+<p>For a read request, this may look something like:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// You will need to determine that the request was aborted;</span>
+<span class="token comment" spellcheck="true">// different libraries have different systems for doing this</span>
+<span class="token keyword">let</span> requestWasAborted<span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>requestWasAborted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> actionTypes<span class="token punctuation">.</span>READ_RESOURCES_NULL<span class="token punctuation">,</span>
+    <span class="token operator">...</span>otherActionAttributes
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>Note: If your application requires tracking the aborted status of a request, you
+  can write a <a href="../guides/plugin.md">plugin</a> to add support for additional action types.</p>
+<p>Note: We understand that some users want their action type names to reflect the action
+  that is being performed, rather than the result of the action. We agree that this is a good
+  practice to follow. If you do, too, it may irritate you that there is no <code>READ_RESOURCES_ABORT</code>
+  action type. This is omitted in an effort to keep the surface area of Redux Resource small,
+  since that action would behave the same as <code>READ_RESOURCES_NULL</code>.</p>
+</blockquote>
+<h3 id="canceling-requests-in-popular-libraries">Canceling requests in popular libraries</h3>
+<p>There are many different tools developers use to make requests. In this section,
+we will go through how to cancel requests using some of the most common tools.</p>
+<h4 id="xmlhttprequest">XMLHttpRequest</h4>
+<p>In browsers, the native way to cancel a request is to call the <code>abort</code> method
+on an <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">XMLHttpRequest</a>.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> myRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myRequest<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&apos;GET&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;books&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myRequest<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="xhr">xhr</h4>
+<p>The <a href="https://github.com/naugtur/xhr" target="_blank">xhr</a> library simplifies the creation of
+XHR objects. Because it returns a native XMLHttpRequest object, canceling
+requests with <code>xhr</code> is the same as when you use the native XMLHttpRequest
+constructor.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> xhr <span class="token keyword">from</span> <span class="token string">&apos;xhr&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> request <span class="token operator">=</span> xhr<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/books/23&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>aborted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Request cancelled&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+request<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><a href="../extras/redux-resource-xhr.html">Redux Resource XHR</a> for 
+Redux Resource uses <a href="https://github.com/naugtur/xhr" target="_blank"><code>xhr</code></a> for requests.
+The action creator exported by this library returns a native XHR object, so you
+can use the <code>abort</code> method to cancel those requests.</p>
+<h4 id="fetch">fetch</h4>
+<p>The native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank"><code>fetch</code></a>
+method is a tool for making requests that returns a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a>.
+Native Promises cannot be cancelled (<a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController" target="_blank">yet</a>),
+so we cannot recommend using <code>fetch</code>.</p>
+<h4 id="axios">axios</h4>
+<p><a href="https://github.com/mzabriskie/axios" target="_blank">axios</a> is a Promise-based approach to HTTP
+requests that supports cancellation. It uses a system of canceling Promises
+called &quot;Cancel Tokens,&quot; which is based off of
+<a href="https://medium.com/@benlesh/promise-cancellation-is-dead-long-live-promise-cancellation-c6601f1f5082" target="_blank">a withdrawn cancelable Promises proposal</a>.</p>
+<p>To see how to cancel axios requests, refer to
+<a href="https://github.com/mzabriskie/axios#cancellation" target="_blank">the axios documentation</a>.</p>
+<h4 id="bluebird">Bluebird</h4>
+<p><a href="http://bluebirdjs.com/" target="_blank">Bluebird</a> is Promise implementation that supports
+cancellation using an <code>onCancel</code> method.</p>
+<p>Refer to <a href="http://bluebirdjs.com/docs/api/cancellation.html" target="_blank">the Bluebird documentation</a>
+for specifics on the <code>onCancel</code> method.</p>
+<h4 id="observables-in-rxjs">Observables in RxJS</h4>
+<p><a href="http://reactivex.io/rxjs/" target="_blank">RxJS</a> is a Reactive Programming library for async code using Observables. It includes <a href="https://chrisnoring.gitbooks.io/rxjs-5-ultimate/content/operators-and-ajax.html" target="_blank"><code>Observable.ajax()</code></a> for HTTP requests and supports cancellation by calling <code>subscription.unsubscribe()</code>, or using something like <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-takeUntil" target="_blank"><code>.takeUntil()</code></a>.</p>
+<p>If you happen to be using redux-observable, refer to that library&apos;s documentation
+for
+<a href="https://redux-observable.js.org/docs/recipes/Cancellation.html" target="_blank">a recipe for request cancellation</a>.</p>
+<h3 id="alternatives">Alternatives</h3>
+<p>You don&apos;t always need to cancel requests. Two other options are:</p>
+<ol>
+<li><p>Prevent the user from performing an action more than once. For instance, in
+the search example, you could prevent the user from typing if a search of theirs
+is already in flight. And in the pagination example, you can disable the
+&quot;next&quot; and &quot;previous&quot; buttons until the new page loads. In these examples,
+this approach is clearly a subpar experience, but sometimes it does make
+sense. For instance, disabling a &quot;Delete&quot; button for a book once the user
+clicks it once, or disabling a &quot;Buy&quot; button after the user confirms a
+purchase.</p>
+</li>
+<li><p>You could write code to keep track of which request&apos;s response is the correct
+one to display. We generally find it to be simpler to cancel requests instead.</p>
+</li>
+</ol>
+<p>There may be other options, too, and different approaches may make more sense to
+you based on the situation.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="forms.html" class="navigation navigation-prev " aria-label="Previous page: Forms">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="unauthorized-responses.html" class="navigation navigation-next " aria-label="Next page: Unauthorized Responses">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Canceling Requests","level":"1.4.2","depth":2,"next":{"title":"Unauthorized Responses","level":"1.4.3","depth":2,"path":"docs/recipes/unauthorized-responses.md","ref":"docs/recipes/unauthorized-responses.md","articles":[]},"previous":{"title":"Forms","level":"1.4.1","depth":2,"path":"docs/recipes/forms.md","ref":"docs/recipes/forms.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs","github","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/jmeas/redux-resource/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":"auto","token":"UA-102027744-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jmeas/redux-resource/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"redux-resource","gitbook":"3.2.2"},"file":{"path":"docs/recipes/canceling-requests.md","mtime":"2017-12-10T00:20:14.641Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-10T02:11:05.803Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

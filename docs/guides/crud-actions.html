@@ -1,0 +1,1112 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CRUD Actions · redux-resource</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="named-requests.html" />
+    
+    
+    <link rel="prev" href="tracking-requests.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/motivation.html">
+            
+                <a href="../introduction/motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/core-concepts.html">
+            
+                <a href="../introduction/core-concepts.html">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/similar-projects.html">
+            
+                <a href="../introduction/similar-projects.html">
+            
+                    
+                    Similar Projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/examples.html">
+            
+                <a href="../introduction/examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Guides
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="state-structure.html">
+            
+                <a href="state-structure.html">
+            
+                    
+                    State Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="tracking-requests.html">
+            
+                <a href="tracking-requests.html">
+            
+                    
+                    Tracking Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="crud-actions.html">
+            
+                <a href="crud-actions.html">
+            
+                    
+                    CRUD Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="named-requests.html">
+            
+                <a href="named-requests.html">
+            
+                    
+                    Named Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="request-statuses.html">
+            
+                <a href="request-statuses.html">
+            
+                    
+                    Request Statuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="reading-resources.html">
+            
+                <a href="reading-resources.html">
+            
+                    
+                    Reading Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="updating-resources.html">
+            
+                <a href="updating-resources.html">
+            
+                    
+                    Updating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="creating-resources.html">
+            
+                <a href="creating-resources.html">
+            
+                    
+                    Creating Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="deleting-resources.html">
+            
+                <a href="deleting-resources.html">
+            
+                    
+                    Deleting Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="usage-with-react.html">
+            
+                <a href="usage-with-react.html">
+            
+                    
+                    Usage With React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="migration-guides.html">
+            
+                <a href="migration-guides.html">
+            
+                    
+                    Migration Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../recipes/">
+            
+                <a href="../recipes/">
+            
+                    
+                    Recipes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recipes/forms.html">
+            
+                <a href="../recipes/forms.html">
+            
+                    
+                    Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recipes/canceling-requests.html">
+            
+                <a href="../recipes/canceling-requests.html">
+            
+                    
+                    Canceling Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recipes/unauthorized-responses.html">
+            
+                <a href="../recipes/unauthorized-responses.html">
+            
+                    
+                    Unauthorized Responses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recipes/user-feedback.html">
+            
+                <a href="../recipes/user-feedback.html">
+            
+                    
+                    User Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recipes/related-resources.html">
+            
+                <a href="../recipes/related-resources.html">
+            
+                    
+                    Related Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recipes/caching.html">
+            
+                <a href="../recipes/caching.html">
+            
+                    
+                    Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../extras/">
+            
+                <a href="../extras/">
+            
+                    
+                    Ecosystem Extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../extras/redux-resource-action-creators.html">
+            
+                <a href="../extras/redux-resource-action-creators.html">
+            
+                    
+                    Redux Resource Action Creators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../extras/redux-resource-xhr.html">
+            
+                <a href="../extras/redux-resource-xhr.html">
+            
+                    
+                    Redux Resource XHR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../extras/redux-resource-prop-types.html">
+            
+                <a href="../extras/redux-resource-prop-types.html">
+            
+                    
+                    Redux Resource Prop Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../extras/redux-resource-plugins.html">
+            
+                <a href="../extras/redux-resource-plugins.html">
+            
+                    
+                    Redux Resource Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../extras/http-status-codes-plugin.html">
+            
+                <a href="../extras/http-status-codes-plugin.html">
+            
+                    
+                    HTTP Status Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../extras/selection-plugin.html">
+            
+                <a href="../extras/selection-plugin.html">
+            
+                    
+                    Selection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../extras/reset-plugin.html">
+            
+                <a href="../extras/reset-plugin.html">
+            
+                    
+                    Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../extras/included-resources-plugin.html">
+            
+                <a href="../extras/included-resources-plugin.html">
+            
+                    
+                    Included Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/state-tree.html">
+            
+                <a href="../faq/state-tree.html">
+            
+                    
+                    State Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/actions.html">
+            
+                <a href="../faq/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/lists.html">
+            
+                <a href="../faq/lists.html">
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../api-reference/">
+            
+                <a href="../api-reference/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../api-reference/resource-reducer.html">
+            
+                <a href="../api-reference/resource-reducer.html">
+            
+                    
+                    resourceReducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../api-reference/get-status.html">
+            
+                <a href="../api-reference/get-status.html">
+            
+                    
+                    getStatus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../api-reference/get-resources.html">
+            
+                <a href="../api-reference/get-resources.html">
+            
+                    
+                    getResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../api-reference/upsert-resources.html">
+            
+                <a href="../api-reference/upsert-resources.html">
+            
+                    
+                    upsertResources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../api-reference/set-resource-meta.html">
+            
+                <a href="../api-reference/set-resource-meta.html">
+            
+                    
+                    setResourceMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../api-reference/action-types.html">
+            
+                <a href="../api-reference/action-types.html">
+            
+                    
+                    actionTypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../api-reference/request-statuses.html">
+            
+                <a href="../api-reference/request-statuses.html">
+            
+                    
+                    requestStatuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >CRUD Actions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="crud-actions">CRUD Actions</h1>
+<p>Redux Resource exports Action types to help you create, read, update,
+and delete resources.</p>
+<h3 id="start-and-end-actions">&quot;Start&quot; and &quot;end&quot; Actions</h3>
+<p>CRUD operations are usually asynchronous. In Redux Resource, these
+asynchronous CRUD operations are represented as a sequence of two Redux Actions.
+First, there is a &quot;start&quot; action, which updates your store to reflect that the
+CRUD operation is in a &quot;pending&quot; state. This is later followed by an end action,
+which updates the status to reflect the outcome of the request.</p>
+<p>For instance, the sequence of action types for a successful read request is the
+following:</p>
+<p><code>READ_RESOURCES_PENDING</code> &#x21E8; <code>READ_RESOURCES_SUCCEEDED</code></p>
+<p>This notion of a start and end action will continue to be referenced throughout
+these guides. In particular, remember that the start action sets the request
+status to <code>&apos;PENDING&apos;</code>, and that it is dispatched right before the request begins.</p>
+<p>The <a href="https://github.com/gaearon/redux-thunk" target="_blank">redux-thunk</a> middleware is
+recommended for making action creators for these CRUD operations.</p>
+<h3 id="action-attributes">Action Attributes</h3>
+<p>All actions have a single required value, <code>resourceName</code>, which is the name
+of the resource that is being affected. The simplest action, then, looks
+something like this:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&apos;./store&apos;</span><span class="token punctuation">;</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> actionTypes<span class="token punctuation">.</span>READ_RESOURCES_PENDING<span class="token punctuation">,</span>
+  resourceName<span class="token punctuation">:</span> <span class="token string">&apos;books&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This action isn&apos;t very useful, however. Without more information about this
+request, Redux Resource doesn&apos;t know where to put this information in your
+state tree. Consequently, this action is a no-op.</p>
+<p>To reflect a request status in the state tree, you need to supply at least one
+of these two values in your action: a <code>resources</code> array, or a <code>request</code>, which
+is a name to represent the request.</p>
+<h3 id="resources"><code>resources</code></h3>
+<p>A <code>resources</code> array represents the resources being affected by the action.
+It can be an array of IDs, such as <code>[1, 2, 3]</code>, or an array of resource objects,
+such as</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">&apos;Brian&apos;</span><span class="token punctuation">,</span>
+    phone<span class="token punctuation">:</span> <span class="token string">&apos;444.444.4444&apos;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">&apos;Sarah&apos;</span><span class="token punctuation">,</span>
+    phone<span class="token punctuation">:</span> <span class="token string">&apos;222.222.2222&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>You can even mix the two. When it comes to a <code>resources</code> array, the important
+part is that the objects have some <code>id</code>. This associates the action with some
+resources.</p>
+<p>You may be wondering when you might use the object form versus the shorthand
+form. There are two guidelines to remember, one for the start action, and one
+for the end action.</p>
+<p><strong>For the start action, provide IDs, if you have them.</strong></p>
+<p><strong>For the end action, provide the full resource definitions, if you have them.
+If you don&apos;t, but you do have IDs, then provide those.</strong></p>
+<p>Let&apos;s look at an example.</p>
+<p>If you&apos;re reading a single resource, such as a book, then you might access that
+book from your backend service with its ID. In this situation, you will have an
+ID at the time that you dispatch the start action, so we include that ID in
+the action&apos;s <code>resources</code> array:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&apos;./store&apos;</span><span class="token punctuation">;</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> actionTypes<span class="token punctuation">.</span>READ_RESOURCES_PENDING<span class="token punctuation">,</span>
+  resourceName<span class="token punctuation">:</span> <span class="token string">&apos;books&apos;</span><span class="token punctuation">,</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>When the request succeeds, you now have more detailed information about this
+book to add to your store. So you would include the full book definition in the
+success action&apos;s <code>resources</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&apos;./store&apos;</span><span class="token punctuation">;</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> actionTypes<span class="token punctuation">.</span>READ_RESOURCES_SUCCEEDED<span class="token punctuation">,</span>
+  resourceName<span class="token punctuation">:</span> <span class="token string">&apos;books&apos;</span><span class="token punctuation">,</span>
+  resources<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+    releaseYear<span class="token punctuation">:</span> <span class="token number">2015</span><span class="token punctuation">,</span>
+    author<span class="token punctuation">:</span> <span class="token string">&apos;Jane M. Goodfellow&apos;</span><span class="token punctuation">,</span>
+    title<span class="token punctuation">:</span> <span class="token string">&apos;A History of Canada&apos;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Whenever a <code>resources</code> array is supplied, Redux Resource will update the
+<code>meta</code> for each resource in that array.</p>
+<p>The &quot;success&quot; action types also have special behavior with the <code>resources</code>
+array. For creates, reads, and updates, your state&apos;s resources object will be
+updated to reflect any new data. For successful deletes, the state for that
+resource will be changed to be <code>null</code>, and the resource will be removed from the
+<code>ids</code> array of all lists.</p>
+<p>It isn&apos;t always possible to provide an array of <code>resources</code> in your action. For
+instance, if the user is searching for books by entering a title, you couldn&apos;t
+know which books will be returned until after the request has completed.</p>
+<p>To keep track of the resources for requests like these, you need to use named
+requests.</p>
+<h3 id="request"><code>request</code></h3>
+<p>Supplying a <code>request</code> will track the status of this request under the <code>requests</code>
+property of your store.</p>
+<p>For instance, if your interface allows users to search for a books resource, you
+might dispatch the following action:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&apos;./store&apos;</span><span class="token punctuation">;</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> actionTypes<span class="token punctuation">.</span>READ_RESOURCES_PENDING<span class="token punctuation">,</span>
+  resourceName<span class="token punctuation">:</span> <span class="token string">&apos;books&apos;</span><span class="token punctuation">,</span>
+  request<span class="token punctuation">:</span> <span class="token string">&apos;booksSearch&apos;</span><span class="token punctuation">,</span>
+
+  <span class="token comment" spellcheck="true">// You may also includes additional attributes on a request.</span>
+  <span class="token comment" spellcheck="true">// This attribute, &quot;query&quot; isn&apos;t used by Redux Resource, but you</span>
+  <span class="token comment" spellcheck="true">// could customize the resource reducer (using &quot;plugins&quot;) to make use</span>
+  <span class="token comment" spellcheck="true">// of it.</span>
+  query<span class="token punctuation">:</span> <span class="token string">&apos;Lord of the Flies&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Resources are primarily used to keep
+<a href="tracking-requests.html">track of the request status</a>. For more, refer
+to <a href="named-requests.html">the guide on named requests</a>.</p>
+<h3 id="list"><code>list</code></h3>
+<p>For create and read CRUD operations, you can supply a <code>list</code> to add the resources
+returned from the operation with one of the lists in your slice.</p>
+<blockquote>
+<p>Note: you&apos;ll nearly always want to use a named request when using lists. This is
+  so that you can track the request status.</p>
+</blockquote>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&apos;./store&apos;</span><span class="token punctuation">;</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> actionTypes<span class="token punctuation">.</span>READ_RESOURCES_PENDING<span class="token punctuation">,</span>
+  resourceName<span class="token punctuation">:</span> <span class="token string">&apos;books&apos;</span><span class="token punctuation">,</span>
+  list<span class="token punctuation">:</span> <span class="token string">&apos;mostPopular&apos;</span><span class="token punctuation">,</span>
+  request<span class="token punctuation">:</span> <span class="token string">&apos;getMostPopular&apos;</span><span class="token punctuation">,</span>
+  query<span class="token punctuation">:</span> <span class="token string">&apos;Lord of the Flies&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>To learn more about lists, refer to <a href="lists.html">the lists guide</a>.</p>
+<h3 id="other-crud-action-properties">Other CRUD Action properties</h3>
+<p>The following CRUD Action attributes are all optional.</p>
+<ul>
+<li><p><code>mergeResources</code> <em>(Boolean)</em>: When an action results in resources being
+updated in the store, this determines if the new data is merged with the old,
+or if it replaces the old data. Defaults to <code>true</code>. This only has an effect
+on successful read, write, and update Actions.</p>
+</li>
+<li><p><code>mergeMeta</code> <em>(Boolean)</em>: This is like <code>mergeResources</code>, but for metadata.
+Defaults to <code>true</code>. This property works with actions with any of the CRUD
+action types.</p>
+</li>
+<li><p><code>mergeListIds</code> <em>(Boolean)</em>: When a list is supplied, this lets you control
+whether or not the new list of IDs replaces or gets merged into the existing
+list of IDs for that list. When <code>true</code>, it will protect against duplicate
+IDs being added. Defaults to <code>true</code>. This only applies for successful read
+and write Actions that have a <code>list</code> specified.</p>
+</li>
+</ul>
+<h3 id="action-creators">Action Creators</h3>
+<p>The core Redux Resource library does not include action creators, but there
+is <a href="../extras/redux-resource-xhr.html">a library, Redux Resource XHR</a>, that includes
+action creators.</p>
+<p>You&apos;re also free to build your own action creators. For examples, refer to the
+four CRUD guides:</p>
+<ul>
+<li><a href="reading-resources">Reading Resources</a></li>
+<li><a href="updating-resources">Updating Resources</a></li>
+<li><a href="creating-resources">Creating Resources</a></li>
+<li><a href="deleting-resources">Deleting Resources</a></li>
+</ul>
+<h3 id="using-the-action-types">Using the Action Types</h3>
+<p>One of this library&apos;s exports are these CRUD action types. You can use them in
+your application by importing them like so:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> actionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-resource&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>For a complete list of all of the action types, refer to the
+<a href="../api-reference/action-types.html">Action Types API Reference</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tracking-requests.html" class="navigation navigation-prev " aria-label="Previous page: Tracking Requests">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="named-requests.html" class="navigation navigation-next " aria-label="Next page: Named Requests">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CRUD Actions","level":"1.3.4","depth":2,"next":{"title":"Named Requests","level":"1.3.5","depth":2,"path":"docs/guides/named-requests.md","ref":"docs/guides/named-requests.md","articles":[]},"previous":{"title":"Tracking Requests","level":"1.3.3","depth":2,"path":"docs/guides/tracking-requests.md","ref":"docs/guides/tracking-requests.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs","github","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/jmeas/redux-resource/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":"auto","token":"UA-102027744-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jmeas/redux-resource/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"redux-resource","gitbook":"3.2.2"},"file":{"path":"docs/guides/crud-actions.md","mtime":"2017-12-10T00:20:14.639Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-10T02:11:05.803Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
